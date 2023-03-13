@@ -1,0 +1,47 @@
+<h2>Les directives</h2>
+
+<div>
+
+    <h3>Les direction de composants</h3>
+
+    <div [ngStyle]="{ 'color' : color, 'font-size': fontSize+'px' }">
+
+        <select [(ngModel)]="fontSize">
+            <option>12</option>
+            <option>14</option>
+            <option>20</option>
+        </select>
+
+        <p>mon texte</p>
+    </div>
+
+    <div [ngClass]="{ 'nomClasse': isBordered, 'big-text': fontSize >= 14 }">
+        <input type="checkbox" [(ngModel)]="isBordered" id="demo-ng-class">
+        <label for="demo-ng-class">sélectionnez pour activer la classe "nomClasse"</label>
+    </div>
+
+    <h3>Directives structures</h3>
+
+    <div>
+        <h4>*ngIf</h4>
+
+        <p *ngIf="!isBordered">
+            Permet de conditionner l'existant d'une 
+            balise et son contenu dans la structure html
+        </p>
+
+        <h4>*ngFor</h4>
+
+        <div>
+            <p *ngFor="let item of personnes"> 
+                M. {{ item.nom }} a {{item.age}} ans 
+            </p>
+        </div>
+        
+
+    </div>
+    
+
+</div>
+
+
